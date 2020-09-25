@@ -2,6 +2,17 @@ public class LinkedList {
     Node head;
     Node last;
 
+    int listLength() {
+        Node temp = this.head;
+        int acc = 0;
+        while (temp != null) {
+            acc++;
+            temp = temp.nextNode;
+        }
+
+        return acc;
+    }
+
     public static void main(String[] args) {
         LinkedList vehicleList = new LinkedList();
 
@@ -14,6 +25,8 @@ public class LinkedList {
                 vehicleList.head = newNode;
             }
         }
+
+        System.out.println(vehicleList.listLength());
     }
 }
 
