@@ -18,6 +18,14 @@ public class Vehicle {
         return nextId - 1;
     }
 
+    void changeSpeed(int decrese) {
+        this.speed -= decrese;
+    }
+
+    void stop() {
+        this.speed = 0;
+    }
+
     public String toString() {
         String out = "VehicleID = " + vehicleId + " (" + ownerName + ") "+
                 "Speed = " + speed+
@@ -28,7 +36,6 @@ public class Vehicle {
 
     public static void main(String[] args) {
         Vehicle simoneCar = new Vehicle("Simone");
-
 
         System.out.println(simoneCar);
     }

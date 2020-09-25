@@ -1,6 +1,6 @@
 public class LinkedList {
     Object elem;
-    Object nextCell;
+    LinkedList nextCell;
 
     public String toString() {
         String out = elem + " ";
@@ -9,5 +9,15 @@ public class LinkedList {
         }
 
         return out;
+    }
+
+    int numberListElem() {
+        int elem = 1;
+        if (this.nextCell != null) {
+            elem = 1 + this.nextCell.numberListElem();
+            return elem;
+        } else {
+            return 0;
+        }
     }
 }
