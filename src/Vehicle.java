@@ -1,16 +1,16 @@
 public class Vehicle {
     static int nextId = 1;
-    int vehicleId;
+    final int vehicleId;
     int speed;
     int direction;
     String ownerName;
 
     Vehicle() {
-        vehicleId = nextId++;
+        this.vehicleId = nextId++;
     }
 
     Vehicle(String ownerName) {
-        vehicleId = nextId++;
+        this.vehicleId = nextId++;
         this.ownerName = ownerName;
     }
 
