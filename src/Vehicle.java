@@ -54,11 +54,4 @@ public class Vehicle {
 
         return  out;
     }
-
-    public static void main(String[] args) {
-        Vehicle simoneCar = new Vehicle("Simone");
-
-        System.out.println(simoneCar);
-    }
-
 }

@@ -59,6 +59,5 @@ public class LinkedList {
         }
 
         System.out.println(vehicleList);
-        System.out.println(vehicleList.listLength());
     }
 }
