@@ -1,9 +1,9 @@
 public class Vehicle {
-    static int nextId = 1;
+    private static int nextId = 1;
     final int vehicleId;
-    int speed;
-    int direction;
-    String ownerName;
+    private int speed;
+    private int direction;
+    private String ownerName;
 
     Vehicle() {
         this.vehicleId = nextId++;
@@ -14,22 +14,26 @@ public class Vehicle {
         this.ownerName = ownerName;
     }
 
-    static int highestId() {
+    public static int highestId() {
         return nextId - 1;
     }
 
-    void changeSpeed(int decrese) {
-        this.speed -= decrese;
+
+    private void changeSpeed(int decrease) {
+        if (decrease >= this.speed)
+            this.speed -= decrease;
+        else
+            this.speed = 0;
     }
 
-    void stop() {
+    public void stop() {
         this.speed = 0;
     }
 
     public String toString() {
         String out = "VehicleID = " + vehicleId + " (" + ownerName + ") "+
-                "Speed = " + speed+
-                " Direction = " + direction;
+                "\nSpeed = " + speed+
+                "\nDirection = " + direction;
 
         return  out;
     }
