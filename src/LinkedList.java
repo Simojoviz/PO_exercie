@@ -33,11 +33,11 @@ public class LinkedList {
             return 1 + this.next.listLength();
     }
 
-    public void append(Object new_elem) {
+    public void addElem(Object new_elem) {
         if (this.next == null)
             this.next = new LinkedList(new_elem);
         else
-            this.next.append(new_elem);
+            this.next.addElem(new_elem);
     }
 
     public String toString() {
@@ -55,7 +55,7 @@ public class LinkedList {
 
         for (int i = 0; i < 4; i++) {
             new_car = new Vehicle();
-            vehicleList.append(new_car);
+            vehicleList.addElem(new_car);
         }
 
         System.out.println(vehicleList);
