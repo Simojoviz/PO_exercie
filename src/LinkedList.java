@@ -1,22 +1,39 @@
+import java.lang.invoke.VarHandle;
+
 public class LinkedList {
-    Vehicle elem;
-    LinkedList next;
+    private Object elem;
+    private LinkedList next;
+
+    public Object getElem() {
+        return this.elem;
+    }
+
+    public void setElem(Object _new) {
+        this.elem = _new;
+    }
+
+    public LinkedList getNext() {
+        return this.next;
+    }
 
     public LinkedList() {
         this.elem = null;
         this.next = null;
     }
 
-    public LinkedList(Vehicle elem) {
+    public LinkedList(Object elem) {
         this.elem = elem;
         this.next = null;
     }
-/*
-    int listLength() {
 
+    int listLength() {
+        if (this.next == null)
+            return 1;
+        else
+            return 1 + this.next.listLength();
     }
-*/
-    void append(Vehicle new_elem) {
+
+    public void append(Object new_elem) {
         if (this.next == null)
             this.next = new LinkedList(new_elem);
         else
@@ -42,5 +59,6 @@ public class LinkedList {
         }
 
         System.out.println(vehicleList);
+        System.out.println(vehicleList.listLength());
     }
 }

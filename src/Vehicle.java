@@ -1,27 +1,44 @@
 public class Vehicle {
-    private static int nextId = 1;
-    final int vehicleId;
+    private static int nextID = 1;
+    private final int vehicleId;
     private int speed;
     private int direction;
     private String ownerName;
 
-    Vehicle() {
-        this.vehicleId = nextId++;
+    public Vehicle() {
+        this.vehicleId = nextID++;
     }
 
-    Vehicle(String ownerName) {
-        this.vehicleId = nextId++;
+    public Vehicle(String ownerName) {
+        this.vehicleId = nextID++;
         this.ownerName = ownerName;
+        this.speed = 0;
+        this.direction = 0;
+    }
+
+    public int getNExtID() {
+       return Vehicle.nextID;
+    }
+
+    public int getVehicleId() {
+        return this.vehicleId;
+    }
+
+    public int getSpeed() {
+        return this.speed;
+    }
+
+    public int getDirection() {
+        return this.direction;
     }
 
     public static int highestId() {
-        return nextId - 1;
+        return nextID - 1;
     }
 
-
-    private void changeSpeed(int decrease) {
-        if (decrease >= this.speed)
-            this.speed -= decrease;
+    public void changeSpeed(int change) {
+        if ((this.speed + change) > 0)
+            this.speed += change;
         else
             this.speed = 0;
     }
