@@ -1,39 +1,46 @@
+package it.unive.po1.exercise2;
+
+import it.unive.po1.exercise3.Battery;
+import it.unive.po1.exercise3.EnergySource;
+
 public class Vehicle {
     private static int nextID = 1;
     private final int vehicleId;
     private int speed;
     private int direction;
     private String ownerName;
+    private EnergySource energySource;
 
     public Vehicle() {
         this.vehicleId = nextID++;
     }
 
-    public Vehicle(String ownerName) {
+    public Vehicle(String ownerName, EnergySource source) {
         this.vehicleId = nextID++;
         this.ownerName = ownerName;
         this.speed = 0;
         this.direction = 0;
+        this.energySource = source;
     }
 
-    public int getNExtID() {
+    public static int getNextID() {
        return Vehicle.nextID;
     }
 
-    public int getVehicleId() {
+    public final int getVehicleId() {
         return this.vehicleId;
     }
 
-    public int getSpeed() {
+    public final int getSpeed() {
         return this.speed;
     }
 
-    public int getDirection() {
+    public final int getDirection() {
         return this.direction;
     }
 
     public static int highestId() {
-        return nextID - 1;
+        return Vehicle.nextID - 1;
     }
 
     public void changeSpeed(int change) {
@@ -45,6 +52,10 @@ public class Vehicle {
 
     public void stop() {
         this.speed = 0;
+    }
+
+    public boolean start() {
+        return this.energySource.empty();
     }
 
     public String toString() {

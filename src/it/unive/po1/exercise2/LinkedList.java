@@ -1,4 +1,4 @@
-import java.lang.invoke.VarHandle;
+package it.unive.po1.exercise2;
 
 public class LinkedList {
     private Object elem;
@@ -50,14 +50,15 @@ public class LinkedList {
     }
 
     public static void main(String[] args) {
-        Vehicle new_car = new Vehicle();
-        LinkedList vehicleList = new LinkedList(new_car);
+        Vehicle new_vehicle = new Vehicle();
+        LinkedList vehicleList = new LinkedList(new_vehicle);
 
         for (int i = 0; i < 4; i++) {
-            new_car = new Vehicle();
-            vehicleList.addElem(new_car);
+            new_vehicle = new Vehicle();
+            vehicleList.addElem(new_vehicle);
         }
 
         System.out.println(vehicleList);
     }
+
 }
